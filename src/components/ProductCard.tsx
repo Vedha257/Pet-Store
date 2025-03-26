@@ -40,7 +40,7 @@ export function ProductCard({ product, onAddToCart }: ProductCardProps) {
   };
 
   return (
-    <Card className="overflow-hidden transition-all hover:shadow-md">
+    <Card className="overflow-hidden transition-all hover:shadow-md h-full">
       <div className="relative aspect-square overflow-hidden">
         {product.imageUrl ? (
           <Image
@@ -56,9 +56,9 @@ export function ProductCard({ product, onAddToCart }: ProductCardProps) {
         )}
         <Badge className="absolute top-2 right-2">{product.category}</Badge>
       </div>
-      <CardContent className="p-4">
-        <h3 className="font-semibold text-lg">{product.name}</h3>
-        <div className="flex items-center justify-between mt-2">
+      <CardContent className="p-4 flex-grow">
+        <h3 className="font-semibold text-lg mb-2">{product.name}</h3>
+        <div className="flex items-center justify-between mb-2">
           <p className="font-medium text-lg">{formatPrice(product.price)}</p>
           <p className="text-sm text-muted-foreground">
             Stock: {product.stockQuantity}

@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 export default function AboutPage() {
   return (
-    <div className="container py-12">
+    <div className="container py-12 px-4 md:px-6">
       <div className="max-w-3xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">About Petopia</h1>
 
@@ -16,7 +16,7 @@ export default function AboutPage() {
             feathered, or finned friends.
           </p>
 
-          <h2>Our Story</h2>
+          <h2 className="text-2xl font-bold mt-8 mb-4">Our Story</h2>
           <p>
             Founded in 2023, Petopia began with a simple mission: to create a
             place where pet owners could find everything they need for their
@@ -33,8 +33,8 @@ export default function AboutPage() {
             />
           </div>
 
-          <h2>Our Values</h2>
-          <ul>
+          <h2 className="text-2xl font-bold mt-8 mb-4">Our Values</h2>
+          <ul className="space-y-2 mb-6">
             <li>
               <strong>Quality:</strong> We carefully select each product and pet
               to ensure they meet our high standards.
@@ -53,7 +53,7 @@ export default function AboutPage() {
             </li>
           </ul>
 
-          <h2>Our Team</h2>
+          <h2 className="text-2xl font-bold mt-8 mb-4">Our Team</h2>
           <p>
             Our team consists of passionate pet lovers, experienced
             veterinarians, and knowledgeable pet care specialists. Together, we
@@ -103,12 +103,12 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <h2>Visit Our Store</h2>
+          <h2 className="text-2xl font-bold mt-8 mb-4">Visit Our Store</h2>
           <p>
             We invite you to explore our wide selection of pets and products.
-            Whether you&apos;re looking for a new furry friend or supplies for your
-            current pet, we have everything you need to ensure your pet&apos;s
-            happiness and health.
+            Whether you&apos;re looking for a new furry friend or supplies for
+            your current pet, we have everything you need to ensure your
+            pet&apos;s happiness and health.
           </p>
 
           <div className="flex justify-center my-8">

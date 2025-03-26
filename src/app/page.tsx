@@ -9,34 +9,36 @@ export default function Home() {
     <div className="flex flex-col">
       {/* Hero Section */}
       <section className="hero-gradient relative py-16 md:py-24">
-        <div className="container grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <div className="space-y-6">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary">
-              Your Destination for Pet Happiness.
-            </h1>
-            <p className="text-lg text-muted-foreground">
-              At Petopia, we cater to the needs of your beloved furry friends.
-              Whether you&apos;re a proud parent to a dog, cat, bird, fish, or any
-              other pet, we have everything you need to keep your pets happy and
-              healthy.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button asChild size="lg" className="font-semibold">
-                <Link href="/store">Shop Now</Link>
-              </Button>
-              <Button asChild variant="outline" size="lg">
-                <Link href="/about">Learn More</Link>
-              </Button>
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div className="space-y-6">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary">
+                Your Destination for Pet Happiness.
+              </h1>
+              <p className="text-lg text-muted-foreground">
+                At Petopia, we cater to the needs of your beloved furry friends.
+                Whether you&apos;re a proud parent to a dog, cat, bird, fish, or
+                any other pet, we have everything you need to keep your pets
+                happy and healthy.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 mt-8">
+                <Button asChild size="lg" className="font-semibold">
+                  <Link href="/store">Shop Now</Link>
+                </Button>
+                <Button asChild variant="outline" size="lg">
+                  <Link href="/about">Learn More</Link>
+                </Button>
+              </div>
             </div>
-          </div>
-          <div className="relative h-[400px] w-full">
-            <Image
-              src="/images/dog.jpg"
-              alt="Happy dog"
-              fill
-              className="object-contain"
-              priority
-            />
+            <div className="relative h-[400px] w-full flex justify-center">
+              <Image
+                src="/images/dog.jpg"
+                alt="Happy dog"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
           </div>
         </div>
 
@@ -70,11 +72,11 @@ export default function Home() {
 
       {/* Categories Section */}
       <section className="py-16 bg-secondary">
-        <div className="container">
+        <div className="container mx-auto px-4 md:px-6">
           <h2 className="text-3xl font-bold text-center mb-12">Our Products</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <Card className="bg-white hover:shadow-lg transition-shadow">
-              <CardContent className="p-6 flex flex-col items-center text-center">
+              <CardContent className="p-6 flex flex-col items-center text-center h-full">
                 <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                   <Image
                     src="/images/dog-food.jpg"
@@ -85,18 +87,18 @@ export default function Home() {
                   />
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Quality Pet Food</h3>
-                <p className="text-muted-foreground text-sm mb-4">
+                <p className="text-muted-foreground text-sm mb-6 flex-grow">
                   From premium dog kibble to organic cat treats, we offer a wide
                   range of food options to suit every pet&apos;s dietary needs.
                 </p>
-                <Button asChild variant="outline" className="mt-auto">
+                <Button asChild variant="outline" className="w-full">
                   <Link href="/store/products?category=food">Shop Food</Link>
                 </Button>
               </CardContent>
             </Card>
 
             <Card className="bg-white hover:shadow-lg transition-shadow">
-              <CardContent className="p-6 flex flex-col items-center text-center">
+              <CardContent className="p-6 flex flex-col items-center text-center h-full">
                 <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                   <Image
                     src="/images/cat-toy.jpg"
@@ -109,18 +111,18 @@ export default function Home() {
                 <h3 className="text-xl font-semibold mb-2">
                   Toys & Accessories
                 </h3>
-                <p className="text-muted-foreground text-sm mb-4">
+                <p className="text-muted-foreground text-sm mb-6 flex-grow">
                   Keep your pets entertained with our assortment of toys and
                   accessories designed to engage and stimulate their minds.
                 </p>
-                <Button asChild variant="outline" className="mt-auto">
+                <Button asChild variant="outline" className="w-full">
                   <Link href="/store/products?category=toys">Shop Toys</Link>
                 </Button>
               </CardContent>
             </Card>
 
             <Card className="bg-white hover:shadow-lg transition-shadow">
-              <CardContent className="p-6 flex flex-col items-center text-center">
+              <CardContent className="p-6 flex flex-col items-center text-center h-full">
                 <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                   <Image
                     src="/placeholder.svg?height=60&width=60"
@@ -133,18 +135,18 @@ export default function Home() {
                 <h3 className="text-xl font-semibold mb-2">
                   Pet Care Essentials
                 </h3>
-                <p className="text-muted-foreground text-sm mb-4">
+                <p className="text-muted-foreground text-sm mb-6 flex-grow">
                   Everything you need to keep your pets healthy, from grooming
                   supplies to vitamins and supplements.
                 </p>
-                <Button asChild variant="outline" className="mt-auto">
+                <Button asChild variant="outline" className="w-full">
                   <Link href="/store/products?category=care">Shop Care</Link>
                 </Button>
               </CardContent>
             </Card>
 
             <Card className="bg-white hover:shadow-lg transition-shadow">
-              <CardContent className="p-6 flex flex-col items-center text-center">
+              <CardContent className="p-6 flex flex-col items-center text-center h-full">
                 <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                   <Image
                     src="/placeholder.svg?height=60&width=60"
@@ -157,11 +159,11 @@ export default function Home() {
                 <h3 className="text-xl font-semibold mb-2">
                   Cozy Beds & Furniture
                 </h3>
-                <p className="text-muted-foreground text-sm mb-4">
+                <p className="text-muted-foreground text-sm mb-6 flex-grow">
                   Explore comfortable beds and furniture options for your pets
                   to relax and unwind.
                 </p>
-                <Button asChild variant="outline" className="mt-auto">
+                <Button asChild variant="outline" className="w-full">
                   <Link href="/store/products?category=furniture">
                     Shop Beds
                   </Link>
@@ -174,9 +176,9 @@ export default function Home() {
 
       {/* Why Choose Us Section */}
       <section className="py-16">
-        <div className="container">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
+            <div className="flex justify-center">
               <Image
                 src="/placeholder.svg?height=400&width=400"
                 alt="Happy pets"
@@ -186,9 +188,9 @@ export default function Home() {
               />
             </div>
             <div className="space-y-6">
-              <h2 className="text-3xl font-bold">Why Choose Petopia?</h2>
-              <div className="space-y-4">
-                <div className="flex gap-4">
+              <h2 className="text-3xl font-bold mb-6">Why Choose Petopia?</h2>
+              <div className="space-y-6">
+                <div className="flex gap-4 items-start">
                   <div className="bg-primary/10 p-3 rounded-full h-12 w-12 flex items-center justify-center shrink-0">
                     <svg
                       className="h-6 w-6 text-primary"
@@ -205,7 +207,9 @@ export default function Home() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg">Quality Assurance</h3>
+                    <h3 className="font-semibold text-lg mb-2">
+                      Quality Assurance
+                    </h3>
                     <p className="text-muted-foreground">
                       We source products from trusted brands to ensure the
                       well-being of your pets.
@@ -213,7 +217,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="flex gap-4">
+                <div className="flex gap-4 items-start">
                   <div className="bg-primary/10 p-3 rounded-full h-12 w-12 flex items-center justify-center shrink-0">
                     <svg
                       className="h-6 w-6 text-primary"
@@ -230,15 +234,18 @@ export default function Home() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg">Expert Advice</h3>
+                    <h3 className="font-semibold text-lg mb-2">
+                      Expert Advice
+                    </h3>
                     <p className="text-muted-foreground">
                       Our team consists of passionate pet lovers ready to offer
-                      guidance to find the best products for your pet&apos;s needs.
+                      guidance to find the best products for your pet&apos;s
+                      needs.
                     </p>
                   </div>
                 </div>
 
-                <div className="flex gap-4">
+                <div className="flex gap-4 items-start">
                   <div className="bg-primary/10 p-3 rounded-full h-12 w-12 flex items-center justify-center shrink-0">
                     <svg
                       className="h-6 w-6 text-primary"
@@ -255,7 +262,7 @@ export default function Home() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg">Convenience</h3>
+                    <h3 className="font-semibold text-lg mb-2">Convenience</h3>
                     <p className="text-muted-foreground">
                       Shop online from the comfort of your home and have your
                       pet supplies delivered right to your doorstep.
@@ -263,9 +270,11 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <Button asChild>
-                <Link href="/store">Visit Our Store</Link>
-              </Button>
+              <div className="mt-8">
+                <Button asChild>
+                  <Link href="/store">Visit Our Store</Link>
+                </Button>
+              </div>
             </div>
           </div>
         </div>

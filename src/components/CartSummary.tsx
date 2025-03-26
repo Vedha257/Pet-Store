@@ -27,8 +27,8 @@ export default function CartSummary() {
 
   if (totalItems === 0) {
     return (
-      <Card>
-        <CardHeader>
+      <Card className="h-full">
+        <CardHeader className="pb-3">
           <CardTitle className="text-xl">Your Cart</CardTitle>
         </CardHeader>
         <CardContent>
@@ -50,8 +50,8 @@ export default function CartSummary() {
   }
 
   return (
-    <Card>
-      <CardHeader>
+    <Card className="h-full">
+      <CardHeader className="pb-3">
         <CardTitle className="text-xl">Your Cart</CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
@@ -87,7 +87,7 @@ export default function CartSummary() {
           </div>
         )}
 
-        <Separator />
+        <Separator className="my-2" />
 
         <div className="flex justify-between font-medium">
           <span>

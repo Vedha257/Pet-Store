@@ -152,7 +152,7 @@ export function Sidebar() {
         </div>
 
         <div>
-          <h3 className="font-medium px-3 mb-2">Pets</h3>
+          <h3 className="font-medium px-3 mb-3">Pets</h3>
           <div className="space-y-1">
             {petCategories.map((category) => (
               <CategoryItem key={category.name} category={category} />
@@ -160,10 +160,10 @@ export function Sidebar() {
           </div>
         </div>
 
-        <Separator />
+        <Separator className="my-2" />
 
         <div>
-          <h3 className="font-medium px-3 mb-2">Products</h3>
+          <h3 className="font-medium px-3 mb-3">Products</h3>
           <div className="space-y-1">
             {productCategories.map((category) => (
               <CategoryItem key={category.name} category={category} />

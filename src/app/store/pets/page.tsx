@@ -33,11 +33,11 @@ export default async function PetsPage({ searchParams }: PetsPageProps) {
   const breeds = [...new Set(allPets.map((pet) => pet.breed))];
 
   return (
-    <div className="container py-8">
+    <div className="container py-8 px-4 md:px-6">
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
         <div className="col-span-1 md:col-span-2 lg:col-span-3">
           <div className="flex flex-col md:flex-row md:items-center justify-between mb-6">
-            <h1 className="text-3xl font-bold">Pets</h1>
+            <h1 className="text-3xl font-bold mb-2 md:mb-0">Pets</h1>
             <p className="text-muted-foreground">
               {pets.length} {pets.length === 1 ? "pet" : "pets"} available
             </p>
@@ -102,7 +102,7 @@ export default async function PetsPage({ searchParams }: PetsPageProps) {
                   </div>
                 </div>
 
-                <Separator />
+                <Separator className="my-2" />
 
                 <div>
                   <h3 className="text-sm font-medium mb-2">Breed</h3>

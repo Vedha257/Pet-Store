@@ -14,7 +14,7 @@ interface PetCardProps {
 
 export function PetCard({ pet, onAddToCart }: PetCardProps) {
   return (
-    <Card className="overflow-hidden transition-all hover:shadow-md">
+    <Card className="overflow-hidden transition-all hover:shadow-md h-full">
       <div className="relative aspect-square overflow-hidden">
         {pet.imageUrl ? (
           <Image
@@ -30,9 +30,9 @@ export function PetCard({ pet, onAddToCart }: PetCardProps) {
         )}
         <Badge className="absolute top-2 right-2">{pet.type}</Badge>
       </div>
-      <CardContent className="p-4">
-        <h3 className="font-semibold text-lg">{pet.breed}</h3>
-        <div className="flex items-center justify-between mt-2">
+      <CardContent className="p-4 flex-grow">
+        <h3 className="font-semibold text-lg mb-2">{pet.breed}</h3>
+        <div className="flex items-center justify-between mb-2">
           <div>
             <p className="text-sm text-muted-foreground">
               Age: {pet.age} {pet.age === 1 ? "year" : "years"}

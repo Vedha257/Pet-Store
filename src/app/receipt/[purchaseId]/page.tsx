@@ -46,9 +46,9 @@ export default async function ReceiptPage({
   const grandTotal = petsTotal + productsTotal;
 
   return (
-    <div className="container max-w-3xl py-12">
+    <div className="container max-w-3xl py-12 px-4 md:px-6">
       <Card className="border-primary/20">
-        <CardHeader className="bg-primary/5 border-b">
+        <CardHeader className="bg-primary/5 border-b p-6">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div>
               <CardTitle className="text-2xl">
@@ -97,7 +97,7 @@ export default async function ReceiptPage({
               <h3 className="font-medium mb-2">Payment Information</h3>
               <div className="text-sm space-y-1">
                 <p>
-                  <span className="font-medium">Payment Method:</span>
+                  <span className="font-medium">Payment Method:</span>{" "}
                   {purchase.mode.charAt(0).toUpperCase() +
                     purchase.mode.slice(1)}
                 </p>
@@ -109,7 +109,7 @@ export default async function ReceiptPage({
             </div>
           </div>
 
-          <Separator />
+          <Separator className="my-4" />
 
           <div>
             <h3 className="font-medium mb-4">Purchase Summary</h3>

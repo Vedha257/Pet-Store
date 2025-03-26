@@ -97,7 +97,7 @@ export default function CheckoutPage() {
   };
 
   return (
-    <div className="container py-8">
+    <div className="container py-8 px-4 md:px-6">
       <h1 className="text-3xl font-bold mb-8">Checkout</h1>
 
       {error && (
@@ -109,7 +109,7 @@ export default function CheckoutPage() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div>
           <Card>
-            <CardHeader>
+            <CardHeader className="pb-4">
               <CardTitle>Your Cart</CardTitle>
               <CardDescription>
                 Review your items before checkout
@@ -207,7 +207,7 @@ export default function CheckoutPage() {
                   <span>Products Subtotal</span>
                   <span>{formatPrice(productsTotal)}</span>
                 </div>
-                <Separator />
+                <Separator className="my-2" />
                 <div className="flex justify-between font-medium">
                   <span>Total</span>
                   <span>{formatPrice(totalPrice)}</span>
@@ -219,7 +219,7 @@ export default function CheckoutPage() {
 
         <div>
           <Card>
-            <CardHeader>
+            <CardHeader className="pb-4">
               <CardTitle>Customer Information</CardTitle>
               <CardDescription>
                 Enter your details to complete the purchase
