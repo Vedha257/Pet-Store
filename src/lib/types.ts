@@ -3,8 +3,9 @@ export interface Pet {
   type: string;
   breed: string;
   price: number;
-  description?: string;
-  imageUrl?: string;
+  age: number;
+  description?: string | null;
+  imageUrl?: string | null;
 }
 
 export interface Product {
@@ -13,6 +14,6 @@ export interface Product {
   price: number;
   stockQuantity: number;
   category: string;
-  description?: string;
-  imageUrl?: string;
+  description?: string | null;
+  imageUrl?: string | null;
 }
