@@ -4,11 +4,12 @@ import { prisma } from "@/lib/prisma";
 export default async function ReceiptPage({
   params,
 }: {
-  params: { purchaseId: string };
+  params: Promise<{ purchaseId: string }>;
 }) {
   // Fetch purchase details from the database
+  const purchaseId = (await params).purchaseId;
   const purchase = await prisma.purchase.findUnique({
-    where: { id: params.purchaseId },
+    where: { id: purchaseId },
     include: {
       customer: true,
       pets: true,
