@@ -1,9 +1,4 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
+// prisma/schema.prisma
 generator client {
   provider = "prisma-client-js"
 }
@@ -13,30 +8,54 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Customer{
-  id  String @id @default(cuid())
-  name  String
-  address String?
-  phoneNo Int
-  email String
+model Customer {
+  id        String    @id @default(cuid())
+  name      String
+  address   String?
+  phoneNo   String    // Changed from Int to String for flexibility
+  email     String
+  createdAt DateTime  @default(now())
+  purchases Purchase[]
 }
 
-model Pets{
-  id String @id @default(cuid())
-  type String
-  breed String
-  age Int
-  price Float
+model Pet {
+  id          String    @id @default(cuid())
+  type        String    // e.g., "Dog", "Cat"
+  breed       String
+  age         Int
+  price       Float
+  description String?
+  imageUrl    String?
+  purchase    Purchase? @relation(fields: [purchaseId], references: [id])
+  purchaseId  String?   // Nullable; set when sold
 }
 
-model Purchase{
-  id String @id @default(cuid())
-  // customerId Customer @relation()
-  mode  String 
-  date DateTime @default(now())
+model Product {
+  id             String           @id @default(cuid())
+  name           String
+  category       String           // e.g., "Food", "Toys"
+  price          Float
+  description    String?
+  imageUrl       String?
+  stockQuantity  Int
+  productPurchases ProductPurchase[]
 }
 
-model Stock{
-  id String @id @default(cuid())
-  petFood String
+model Purchase {
+  id               String           @id @default(cuid())
+  customer         Customer         @relation(fields: [customerId], references: [id])
+  customerId       String
+  pets             Pet[]            // Many-to-many with Pet
+  productPurchases ProductPurchase[] // Links to products purchased
+  mode             String           // e.g., "cash"
+  date             DateTime         @default(now())
+}
+
+model ProductPurchase {
+  id         String   @id @default(cuid())
+  purchase   Purchase @relation(fields: [purchaseId], references: [id])
+  purchaseId String
+  product    Product  @relation(fields: [productId], references: [id])
+  productId  String
+  quantity   Int
 }
